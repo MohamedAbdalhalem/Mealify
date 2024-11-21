@@ -1,0 +1,715 @@
+
+/* fixed classes */
+:root{
+    --backgroud-1:#eee;
+    --backgroud-2:#F5F5F5;
+    --color-1:#7f7f90;
+    --color-2:#212529;
+    --color-3:#ce1212;
+    --color-4:#e61414;
+}
+html{
+    scroll-behavior: smooth;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-padding: 70px;
+}
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+.inter{
+    font-family: "Inter", sans-serif;
+}
+.amatic{
+    font-family: "Amatic SC", sans-serif;
+}
+.open-sans{
+    font-family: "Open Sans", sans-serif;
+}
+.transition{
+    transition: 0.3s;
+}
+.rapper{
+    background-color: var(--backgroud-1);
+}
+.container{
+    padding: 90px 5px;
+    width: 95%;
+    margin: auto;
+}
+.heading{
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-1);
+    font-weight: 4000;
+    margin: 0;
+}
+.title{
+    text-align: center;
+    margin: 0;
+    font-size: 3.125rem;
+    color: var(--color-2);
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.title span{
+    color: var(--color-3);
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 25px;
+}
+.flex-100{
+    flex-basis: 100%;
+}
+/* start navbar */
+.head{
+position: fixed;
+width: 100%;
+height: fit-content;
+background-color: #fff;
+z-index: 9;
+box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+
+}
+
+
+nav.container{
+    padding: 30px 0px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+nav .logo a{
+    color: var(--color-2);
+    font-size: 30px;
+    font-weight: 700;
+}
+.logo a span{
+    color: var(--color-3);
+}
+nav .dark i{
+    font-size: 25px;
+    color: var(--color-2);
+}
+.dark i.fa-moon{
+    padding: 0px 20px;
+}
+nav ul{
+    background-color: #fff;
+    margin: 0;
+    position: absolute;
+    width: 65%;
+    height: 100vh;
+    z-index: 10;
+    top: 0;
+    left: 100%;
+    padding: 60px 10px;
+}
+ul:target{
+    left: 35%;
+    box-shadow: -170px 0 0px 100vw rgba(255,255,255,0.5);
+}
+
+nav ul li{
+    margin-bottom: 30px;
+}
+nav ul li a{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-1);
+    position: relative;
+}
+nav ul li a::before{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-3);
+    position: absolute;
+    bottom: -2px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
+nav ul li a:hover{
+    color: var(--color-2);
+}
+
+
+/* start section-1(home) */
+.home{
+    padding: 130px 5px 40px;
+    position: relative;
+    z-index: 4;
+}
+.mian-dish img{
+    width: 100%;
+    animation-name: vibration;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+.mian-dish img:hover{
+    animation-play-state: running;
+}
+@keyframes vibration {
+    25%{
+        transform: translateX(2px);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+    75%{
+        transform: translateX(-2px);
+    }
+    100%{
+        transform: translateY(-2px);
+    }
+}
+.discription{
+    text-align: center;
+}
+.discription h1{
+    color: var(--color-2);
+    font-size: 4.0625rem;
+}
+.discription p{
+    color: var(--color-1);
+    line-height: 1.5;
+    margin-top: -20px;
+}
+.discription .content{
+    justify-content: space-evenly;
+    gap: 0;
+}
+.discription .content button{
+    padding: 15px 30px;
+    border: none;
+    background-color: var(--color-3);
+    color: #fff;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+.discription .content button:hover{
+    background-color: var(--color-4);
+}
+.video{
+    margin-bottom: 20px;
+}
+.video:hover .play, .video:hover a{
+    color: var(--color-3);
+}
+.video a{
+    color: var(--color-2);
+    font-weight: 600;
+}
+.video .play{
+    position: relative;
+    z-index: 3;
+    font-size: 30px;
+    color: var(--color-2);
+}
+.video .play::before{
+    content: "";
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.video .play::after{
+    content: "";
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to right,var(--color-3) 50%,transparent 50%);
+    z-index: -2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);   
+}
+
+/* start section-2(chefs) */
+.cover-shef{
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.shef{
+    position: relative;
+    overflow: hidden;
+    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+}
+.shef:hover{
+    transform: scale(1.07,1.05);
+}
+.shef img {
+    width: 100%;
+    display: block;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.shef picture{
+    position: relative;
+}
+.shef picture::before{
+    content: "";
+    background-image: url(../images/chef/asset\ 13.svg);
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: -2px;
+    z-index: 5;
+    left: 0;
+}
+.shef .detials{
+    background-color: #fff;
+    text-align: center;
+    color: var(--color-1);
+    padding: 10px 15px;
+    font-weight: 400;
+}
+.shef h3{
+    font-size: 1.25rem;
+    color: var(--color-2);
+}
+.shef h4{
+  font-size: 0.875rem ; 
+  margin: 0;
+  font-weight: 400;
+}
+.shef .account{
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    padding: 10px;
+    align-items: center;
+    border-radius: 4px;
+    right: -40px;
+    top: 40px;
+    transition-delay: 0.3s;
+}
+.shef:hover .account{
+    right: 20px;
+}
+.account i{
+    font-size: 18px;
+    color: #eee;
+    cursor: pointer;
+}
+.account i:hover{
+    color: #000;
+}
+
+/* start section-3(Gallery) */
+.menu{
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "pizza"
+    "burger"
+    "levitation"
+    "frittata"
+    "steak"
+    "fried"
+    "kebab"
+    ;
+}
+
+.menu div{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    border: 5px solid #fff;
+}
+.menu div:hover .component{
+    top: 0;
+}
+.menu .component{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    border: none;
+}
+.component h3{
+    margin: 0;
+    font-size: 24px;
+}
+.menu div img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.menu div:hover img{
+    transform: scale(1.1);
+}
+.item-1{
+    grid-area: pizza;
+}
+.item-2{
+    grid-area: levitation;
+}
+.item-3{
+    grid-area: steak;
+}
+.item-4{
+    grid-area: frittata;
+}
+.item-5{
+    grid-area: burger;
+}
+.item-6{
+    grid-area: fried;
+}
+.item-7{
+    grid-area: kebab;
+}
+
+/* start section-4(contact) */
+.contact iframe{
+    height: 350px;
+}
+.contact .details{
+    background-color: var(--backgroud-2);
+    padding: 20px;
+    flex-wrap: nowrap;
+}
+.details i{
+    background-color: var(--color-3);
+    color: #fff;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 50%;
+}
+.details h3{
+    color: var(--color-1);
+    font-size: 1.25rem;
+    margin: 0;
+}
+.details p{
+    margin: 0;
+    margin-top: 10px;
+}
+.location  form{
+    background-color: #fff;
+    padding: 20px;
+    justify-content: center;
+    box-shadow: 0 0 1.875rem #00000014;
+}
+.location form input , .location form textarea{
+    flex-basis: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border: 2px solid var(--backgroud-1);
+}
+.location form input:focus,.location form textarea:focus{
+    border-color: var(--color-3);
+}
+.location form textarea{
+    resize: vertical;
+    max-height: 250px;
+    min-height: 150px;
+}
+.location form button{
+    background-color: var(--color-3);
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 25px;
+    border: none;
+}
+.location form button:hover{
+    background-color: var(--color-4);
+}
+
+/* start footer */
+footer{
+    background-image: url(../images/textured-metal-background.jpg);
+    position: relative;
+}
+footer::after{
+    content: "";
+    background-color: rgba(0, 0, 0,0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.end{
+    color: #fff;
+    padding: 40px 0px;
+    position: relative;
+    z-index: 2;
+}
+.about h2{
+    gap: 0;
+    margin: 0;
+    font-size: 1.875rem;
+    margin-bottom: 10px;
+}
+.about h2 img{
+    width: 50px;
+    margin-right: 10px;
+}
+.about h2 span{
+    color: var(--color-3);
+}
+.about p,.subscribe p{
+    line-height: 1.5;
+}
+.about h4{
+    font-size: 1.125rem;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.about .media{
+    text-align: center;
+    font-size: 24px;
+}
+.media i{
+    padding: 0px 25px;
+}
+.subscribe h3,.contact-detials h3{
+    font-size: 1.125rem;
+}
+.subscribe input,.subscribe button  {
+    width: 100%;
+    padding: 15px 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+.subscribe button{
+    background-color: var(--color-3);
+    color: #fff;
+    cursor: pointer;
+}
+.subscribe button:hover{
+    background-color: var(--color-4);
+}
+.subscribe ul{
+    height: 100px;
+    display: flex;
+    flex-flow: column wrap;
+}
+.subscribe ul li{
+    flex-basis: calc(100% / 3);
+    width: 40%;
+    transition: 0.3s;
+}
+.subscribe ul li:hover{
+    background-color: rgb(238, 238, 238,0.4);
+    transform: translateX(10px);
+}
+.subscribe ul li a{
+    color: #fff;
+}
+.contact-detials ul li{
+    margin-left: 10px;
+}
+.contact-detials ul li i{
+    color: var(--color-3);
+    font-size: 22px;
+    padding: 5px;
+    margin-right: 20px;
+}
+
+/* responsive code */
+/* sm */
+@media (min-width: 576px) {
+    .container{
+        width: 85%;
+    }
+    nav ul{
+        width: 50%;
+    }
+    ul:target{
+        left: 50%;
+    }
+    .subscribe form{
+        display: flex;
+        justify-content: space-between;
+    }
+    .subscribe input{
+        width: 70%;
+    }
+    .subscribe button{
+        width: 28%;
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    .container{
+        width: 90%;
+    }
+    nav ul{
+        width: 40%;
+    }
+    ul:target{
+        left: 60%;
+    }
+    .staf{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .staf > div{
+        flex-basis: 50%;
+    }
+    .menu{
+        grid-template-areas: 
+        "pizza steak"
+        "burger steak"
+        "levitation fried"
+        "levitation kebab"
+        "frittata ."
+        ;
+    }
+    .md-50{
+        flex-basis: calc(50% - 12.5px);
+    }
+    .end{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .end div:not(div.subscribe){
+        flex-basis: 50%;
+    }
+    .end div.subscribe{
+        flex-basis: 100%;
+        order: 1;
+    }
+}
+
+/* lg */
+@media (min-width: 992px) {
+    .container{
+        width: 85%;
+    }
+    nav ul{
+        width: 30%;
+    }
+    ul:target{
+        left: 70%;
+    }
+    .home{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .mian-dish{
+        order: 1;
+        align-self: flex-end;
+    }
+    .discription{
+        text-align: start;
+    }
+    .mian-dish,.discription{
+        flex-basis: 45%;
+    }
+    .discription .content{
+        justify-content: flex-start;
+        gap: 50px;
+    }
+    .staf > div{
+        flex-basis: 33.33%;
+    }
+    
+    .menu{    
+    grid-template-areas: 
+    "pizza steak burger"
+    "levitation steak fried"
+    "levitation steak kebab"
+    "levitation frittata kebab"
+    ". frittata ."
+    ;
+    }
+}
+
+/* x1 */
+@media (min-width: 1200px) {
+    .container{
+        width: 90%;
+    }
+    nav .dark i.fa-bars{
+        display: none;
+    }
+    .dark i.fa-moon{
+        padding: 0px;
+    }
+    nav ul{
+        background-color:#fff;
+        position:static;   
+        height: fit-content;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
+    }
+    ul:target{
+        left: 0
+    }
+    nav ul li{
+        margin-bottom: 0px;
+        padding: 0px 20px;
+    }
+    nav ul li a{
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--color-1);
+        position: relative;
+    }
+    nav .dark{
+        order: 1;
+    }
+    .end div.subscribe{
+            flex-basis: 48%;
+        }
+    .end div:not(div.subscribe){
+        flex-basis: 25%;
+        order: 1;
+    }
+}
+
+/* xx1 */
+@media (min-width: 1400px) {
+    .container{
+        width: 85%;
+    }
+}
